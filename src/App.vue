@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <MyClient />
+    <MyClient :windowLocationHref="locationHrefStr" />
   </div>
 </template>
 
@@ -9,6 +9,12 @@ import MyClient from "./components/MyClient";
 
 export default {
   name: "App",
+  data() {
+    // URL情報を欲しいかつDI(=Dependency Injection)するために、ここで注入する。
+    return {
+      locationHrefStr: window.location.href,
+    };
+  },
   components: {
     MyClient,
   },

@@ -4,6 +4,13 @@
  */
 
 const userKey = {
+  extractName: function(userKey) {
+    const digitStr = userKey.substring(0, 2);
+    const userNameLength = parseInt(digitStr);
+    const userName = userKey.substring(2, 2 + userNameLength);
+
+    return userName;
+  },
   /**
    * Get the URL parameter value
    *
